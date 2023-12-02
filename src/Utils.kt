@@ -13,7 +13,7 @@ import java.util.*
  * Reads lines from the given input txt file.
  */
 fun loadInput(day: Int): List<String> {
-    val file = File("src", "Day$day.txt")
+    val file = File("src/main/resources/days", "Day$day.txt")
     val date = LocalDate.now()
     var res = emptyList<String>()
 
@@ -27,7 +27,7 @@ fun loadInput(day: Int): List<String> {
 }
 
 fun loadTestInput(day: Int, part: Int): List<String> {
-    val file = File("src", "Day$day-$part-test.txt")
+    val file = File("src/main/resources/days", "Day$day-$part-test.txt")
     if (!file.exists()) {
         return emptyList()
     }
@@ -61,6 +61,6 @@ private fun downloadInput(day: Int) {
         .build()
 
     val response = client.send(request, HttpResponse.BodyHandlers.ofString())
-    File("src", "Day$day.txt").bufferedWriter()
+    File("src/main/resources/days", "Day$day.txt").bufferedWriter()
         .use { writer -> writer.write(response.body()) }
 }
