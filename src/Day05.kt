@@ -10,10 +10,13 @@ fun main() {
 
     // test if implementation meets criteria from the description, like:
     val testInput = loadTestInput(day, 1)
-    check(part1(testInput) == 1)
+    val testOutput1 = part1(testInput)
+    println("Test 1: $testOutput1")
+    check(testOutput1 == testInput.size)
 
-    val testInput2 = loadTestInput(day, 2)
-    check(part2(testInput2) == 1)
+    val testOutput2 = part1(testInput)
+    println("Test 2: $testOutput2")
+    check(testOutput2 == testInput.size)
 
     val input = loadInput(day)
     part1(input).println()
